@@ -35,7 +35,7 @@
             </div>
             <div class="col">
                 <input class="form-control m-3 bg-light" style="width: 50%;" type="text"
-                    onchange="getNumberOfTeams(event)" placeholder="How many teams?">
+                    onchange="getNumberOfTeams(event)" placeholder="Number of Teams">
             </div>
             <div class="col">
                 <button type="button" class="btn btn-primary m-3" onclick="placeName()">Assign</button>
@@ -60,52 +60,59 @@
             <button type="button" class="btn btn-primary m-3">Reset</button>
             <button type="button" class="btn btn-primary m-3">Remove User</button> -->
 
-
     </main>
 
     <!-- Optional JavaScript -->
     <script>
-        //TODO change so that you have an array 
-        let names_list = [];
+        let number_of_teams = 0;
+        let names_row = document.getElementById("names");
+        let n = 1; //number for names id
 
         const addToList = function (event) {
-            let names = document.getElementById("names");
             let name = event.target.value;
             let name_listed = document.createElement("li");
             name_listed.innerText = name;
-            names.appendChild(name_listed);
-            names_list.push(name);
-            console.log(names_list);
-
-
+            name_listed.id = "name" + n;
+            names_row.appendChild(name_listed);
+            let input_field = document.getElementById("input_name"); //TODO ???
+            //input_field.reset();
+            n++;
         }
 
         const getNumberOfTeams = function (teams) {
-            //gets the number of teams
-            //creates columns in the row
-            console.log(teams.target.value);
+            //console.log(teams.target.value);
+            number_of_teams = teams.target.value;
             let teams_row = document.getElementById("teams");
-            //TODO ADD TEAM NAMES
             for (let i = 0; i < teams.target.value; i++) {
                 let column = document.createElement("div");
                 column.setAttribute("class", "col");
-                column.innerText = "TEEEEE";
-                column.id = "team" + i;
+                column.setAttribute("id", "teamid");
+                column.innerText = "Team " + i;
                 teams_row.appendChild(column);
             }
-
         }
 
         const placeName = function () {
             //gets a random number from 0 to list length
-            let max_length = names_list.length;
-            console.log(names_list.length);
-            let random_number = Math.floor(Math.random() * (max_length - 0) + 1);
+            let max_length = names_row.childNodes.length - 1;
+            console.log(max_length);
 
-            let random_name = names_list[random_number];
+            let random_number = Math.floor(Math.random() * (max_length - 1) + 1);
+            console.log(random_number);
+            let random_name = document.querySelector("#name" + random_number);
+            let teams = document.querySelectorAll('#teamid');
+            let new_item = document.createElement("li");
+            new_item.innerText = random_name.innerText;
+            names.removeChild(random_name);
+            //names.removeChild
+            //names_list.splice(random_number);
+            teams[number_of_teams].appendChild(new_item);
+            number_of_teams++;
+            //teams[number_of_teams].target.value = random_name.innerText;
 
-
-
+            //teams[number_of_teams].append;
+            //names_list.splice(random_number, 1);
+            //number_of_teams--;
         }
     </script>
 
