@@ -67,8 +67,7 @@
         let MAX_TEAMS = 0;
         let number_of_teams = 0;
         let names_node = document.getElementById("names"); //node
-        let n = 0; //number for names id
-        let r = 0;
+
 
 
         const addToList = function (event) {
@@ -80,52 +79,39 @@
         }
 
         const getNumberOfTeams = function (teams) {
-            //console.log(teams.target.value);
             MAX_TEAMS = teams.target.value; //stringified int
-            console.log("TEAMS ITERATOR = ", number_of_teams);
             let teams_node = document.getElementById("teams"); //node
-            for (let i = 0; i < teams.target.value; i++) { //how do I know what it is?
+            for (let i = 0; i < teams.target.value; i++) { //could be either string or int ??
                 let column = document.createElement("div");
                 column.setAttribute("class", "col");
                 column.setAttribute("id", "teamid");
-                column.innerText = "Team " + i;
+                column.innerText = "Team " + i + 1;
                 teams_node.appendChild(column);
             }
         }
 
-        const generateRandomNumbersArray = function (length) {
-            let arr = [];
-            for (let i = 0; i < length; i++) {
-                let temp = Math.floor(Math.random() * length);
-                if (arr.indexOf(temp) == -1) {
-                    arr.push(temp);
-                } else
-                    --i;
-            }
-            return arr;
-        }
-
-
         const placeName = function () {
-            //gets a random number from 0 to list length
-            let max_length = names_node.childNodes.length;
-            console.log("MAX LENGTH = ", max_length);
-            let random_numbers = generateRandomNumbersArray(max_length);
             let random_names = document.querySelectorAll("#name");
-            for (let i = 0; i < random_names.length; i++) {
-                random_names[i].id = random_numbers[i];
-            }
-            //console.log(random_names);
-            let random_name = random_names[random_names.length - 1];
-            //console.log(random_name);
-            let teams = document.querySelectorAll('#teamid');
-            //console.log("TEAMID = ", teams[1]);
-            let new_item = document.createElement("li");
-            new_item.innerText = random_name.innerText;
-            random_names.removeChild(random_name);
 
-            teams[number_of_teams].appendChild(new_item);
-            number_of_teams++;
+            if (random_names.length > 0) {
+
+                let max_length = names_node.childNodes.length;
+
+                /*  for (let i = 0; i < random_names.length; i++) {
+                     random_names[i].id = random_numbers[i];
+                 } */
+                //console.log(random_names);
+                let random_index = Math.floor(Math.random() * random_names.length);
+                let random_name = random_names[random_index];
+                console.log(random_name);
+                let teams = document.querySelectorAll('#teamid');
+                let new_item = document.createElement("li");
+                new_item.innerText = random_name.innerText;
+                names_node.removeChild(random_name);
+                teams[number_of_teams].appendChild(new_item);
+                number_of_teams++;
+
+            }
 
         }
     </script>
