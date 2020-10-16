@@ -85,7 +85,7 @@
                 let column = document.createElement("div");
                 column.setAttribute("class", "col");
                 column.setAttribute("id", "teamid");
-                column.innerText = "Team " + i + 1;
+                column.innerText = "Team " + i;
                 teams_node.appendChild(column);
             }
         }
@@ -103,14 +103,17 @@
                 //console.log(random_names);
                 let random_index = Math.floor(Math.random() * random_names.length);
                 let random_name = random_names[random_index];
-                console.log(random_name);
                 let teams = document.querySelectorAll('#teamid');
                 let new_item = document.createElement("li");
                 new_item.innerText = random_name.innerText;
+                if (number_of_teams < MAX_TEAMS) {
+                    teams[number_of_teams].appendChild(new_item);
+                } else {
+                    number_of_teams = 0;
+                    teams[number_of_teams].appendChild(new_item);
+                }
                 names_node.removeChild(random_name);
-                teams[number_of_teams].appendChild(new_item);
                 number_of_teams++;
-
             }
 
         }
