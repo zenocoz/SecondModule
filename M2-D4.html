@@ -68,16 +68,15 @@
         let number_of_teams = 0;
         let names_node = document.getElementById("names"); //node
         let n = 0; //number for names id
+        let r = 0;
+
 
         const addToList = function (event) {
             let name = event.target.value; //string
             let name_item = document.createElement("li"); //object
             name_item.innerText = name;
-            name_item.id = "name" + n;
+            name_item.id = "name";
             names_node.appendChild(name_item);
-            //let input_field = document.getElementById("input_name"); //TODO ???
-            //input_field.reset();
-            n++;
         }
 
         const getNumberOfTeams = function (teams) {
@@ -94,22 +93,40 @@
             }
         }
 
+        const generateRandomNumbersArray = function (length) {
+            let arr = [];
+            for (let i = 0; i < length; i++) {
+                let temp = Math.floor(Math.random() * length);
+                if (arr.indexOf(temp) == -1) {
+                    arr.push(temp);
+                } else
+                    --i;
+            }
+            return arr;
+        }
+
 
         const placeName = function () {
             //gets a random number from 0 to list length
             let max_length = names_node.childNodes.length;
             console.log("MAX LENGTH = ", max_length);
-
-            let random_number = Math.floor(Math.random() * (max_length));
-            console.log("RANDOM NUMBER = ", random_number);
-            let random_name = document.querySelector("#name" + random_number);
+            let random_numbers = generateRandomNumbersArray(max_length);
+            let random_names = document.querySelectorAll("#name");
+            for (let i = 0; i < random_names.length; i++) {
+                random_names[i].id = random_numbers[i];
+            }
+            //console.log(random_names);
+            let random_name = random_names[random_names.length - 1];
+            //console.log(random_name);
             let teams = document.querySelectorAll('#teamid');
-            console.log("TEAMID0 = ", teams[1]);
+            //console.log("TEAMID = ", teams[1]);
             let new_item = document.createElement("li");
             new_item.innerText = random_name.innerText;
-            names.removeChild(random_name);
+            random_names.removeChild(random_name);
+
             teams[number_of_teams].appendChild(new_item);
             number_of_teams++;
+
         }
     </script>
 
