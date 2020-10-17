@@ -45,6 +45,30 @@
             margin-bottom: 0%;
             margin-left: auto;
             margin-right: auto;
+            top: 50%;
+            left: 50%;
+        }
+
+        .row {
+            margin-left: auto;
+        }
+
+
+        .block {
+            display: block;
+            width: 20%;
+            border: 3;
+            background-color: rgb(117, 30, 230);
+            color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .block:hover {
+            background-color: rgb(117, 30, 230, 2);
+            color: black;
         }
     </style>
 
@@ -54,11 +78,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <input class="form-control m-3 bg-light" id="input_name" style="width: 50%;" type="text"
-                    onchange="addToList(event)" placeholder="Enter Name">
+                <!--      <input class="form-control m-3 bg-light" id="input_name" style="width: 50%;" type="text"
+                    onchange="addToList(event)" placeholder="Enter Name"> -->
+
+                <input type="text" class="m-3 bg-light" onchange="addToList(event)" id="input_name"
+                    placeholder="Enter Name"><br><br>
             </div>
             <div class="col">
-                <input class="form-control m-3 bg-light" style="width: 50%, length auto;" type="text"
+                <input class="form-control m-3 bg-light" id="input_team" style="width: 50%, length auto;" type="text"
                     onchange="getNumberOfTeams(event)" placeholder="Number of Teams">
             </div>
             <div class="col">
@@ -66,15 +93,19 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-4">
                 <h2>Names</h2>
                 <ul id="names">
                 </ul>
             </div>
+            <div class="col-8">
+                <button class="block">Reset</button>
+            </div>
         </div>
     </div>
-    <div class="centerpiece" style="max-width: 600px;">
+    <div class="centerpiece" style="max-width: 600px; position: absolute;">
         <div class="row">
+            <h2>TEAMS</h2>
 
         </div>
 
@@ -104,8 +135,7 @@
             name_item.id = "name";
             names_node.appendChild(name_item);
             let input_source = document.getElementById("input_name");
-            console.log(input_source);
-            input_source.reset();
+            input_source.value = "";
         }
 
         const getNumberOfTeams = function (teams) {
@@ -117,6 +147,8 @@
                 column.setAttribute("id", "teamid");
                 column.innerText = "Team " + i;
                 teams_node.appendChild(column);
+                let input_team = document.getElementById("input_team");
+                input_team.value = "";
             }
         }
 
