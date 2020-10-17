@@ -21,34 +21,60 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
+        body,
+        html {
+            background: #141414;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #fff;
+            line-height: 1.2;
+        }
 
+        input[type=text] {
+            width: 18em;
+            height: 2em;
+
+        }
+
+        #assign {
+            background-color: coral;
+            color: #fff;
+        }
+
+        .centerpiece {
+            margin-top: 0%;
+            margin-bottom: 0%;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 
 </head>
 
 <body>
-    <main class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col">
                 <input class="form-control m-3 bg-light" id="input_name" style="width: 50%;" type="text"
                     onchange="addToList(event)" placeholder="Enter Name">
             </div>
             <div class="col">
-                <input class="form-control m-3 bg-light" style="width: 50%;" type="text"
+                <input class="form-control m-3 bg-light" style="width: 50%, length auto;" type="text"
                     onchange="getNumberOfTeams(event)" placeholder="Number of Teams">
             </div>
             <div class="col">
-                <button type="button" class="btn btn-primary m-3" onclick="placeName()">Assign</button>
+                <button type="button" id="assign" class="btn btn-primary m-3" onclick="placeName()">Assign</button>
             </div>
         </div>
         <div class="row">
-            ALL THE NAMES
             <div class="col">
+                <h2>Names</h2>
                 <ul id="names">
-
                 </ul>
-
             </div>
+        </div>
+    </div>
+    <div class="centerpiece" style="max-width: 600px;">
+        <div class="row">
 
         </div>
 
@@ -56,11 +82,14 @@
 
         </div>
 
-        <!-- EXTRAS
+    </div>
+
+
+    <!-- EXTRAS
             <button type="button" class="btn btn-primary m-3">Reset</button>
             <button type="button" class="btn btn-primary m-3">Remove User</button> -->
 
-    </main>
+
 
     <!-- Optional JavaScript -->
     <script>
@@ -68,14 +97,15 @@
         let number_of_teams = 0;
         let names_node = document.getElementById("names"); //node
 
-
-
         const addToList = function (event) {
             let name = event.target.value; //string
             let name_item = document.createElement("li"); //object
             name_item.innerText = name;
             name_item.id = "name";
             names_node.appendChild(name_item);
+            let input_source = document.getElementById("input_name");
+            console.log(input_source);
+            input_source.reset();
         }
 
         const getNumberOfTeams = function (teams) {
@@ -92,15 +122,8 @@
 
         const placeName = function () {
             let random_names = document.querySelectorAll("#name");
-
             if (random_names.length > 0) {
-
                 let max_length = names_node.childNodes.length;
-
-                /*  for (let i = 0; i < random_names.length; i++) {
-                     random_names[i].id = random_numbers[i];
-                 } */
-                //console.log(random_names);
                 let random_index = Math.floor(Math.random() * random_names.length);
                 let random_name = random_names[random_index];
                 let teams = document.querySelectorAll('#teamid');
@@ -114,6 +137,19 @@
                 }
                 names_node.removeChild(random_name);
                 number_of_teams++;
+            }
+        }
+
+        //TODO complete
+        const reset = function () {
+            let teams = document.querySelectorAll('#teamid');
+            console.log(teams);
+
+            for (let i = 0; i < MAX_TEAMS; i++) {
+                while (teams[i]) {
+                    teams[i].removeChild(teams[i].firstChild);
+                }
+
             }
 
         }
