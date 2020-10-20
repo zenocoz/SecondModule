@@ -21,7 +21,7 @@
             EX5) Write a selector to target the "even" links in the navbar DONE
             EX6) Write a selector to target the last blog post TODO 
             EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives ) TODO
-            EX8) Write a selector to target the second post author
+            EX8) Write a selector to target the second post author TODO
             EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly
             EX10) Write a selector to target the footer
         */
@@ -51,14 +51,13 @@
         /*   .blog-post h2:first-child {
             color: green;
 
-
-        /*5/
+        /*5*/
         .nav>a:nth-child(even) {
             background-color: greenyellow;
         }
 
-        /*6*/
-        .col-md-8>div:last-child h2 {
+        /*6 NOT WORKING*/
+        .blog-post:last-child>h2 {
             color: green;
         }
 
@@ -69,7 +68,7 @@
         }
 
         /*8*/
-        .blog-post a:first-of-type {
+        .blog-post:nth-child(2) a:first-of-type {
             color: yellow;
         }
 
