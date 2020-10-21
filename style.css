@@ -114,3 +114,32 @@ section {
 .thumb-right {
   justify-content: flex-end;
 }
+
+.blog-sidebar .card-header {
+  font-size: 1rem;
+}
+
+.post,
+.blog-sidebar-item {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 16px;
+}
+
+.card-footer {
+  justify-content: start;
+  display: flex;
+  color: grey;
+}
+
+.blog-sidebar-header {
+  font-weight: bold;
+  color: black;
+  padding: 8px;
+  margin: 0px;
+  background-color: #ccc;
+}
+
+.blog-sidebar-item {
+  padding: 0;
+}
