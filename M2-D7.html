@@ -510,12 +510,18 @@
 
         //         }
 
-        /*         const trimFifty = function () {
-                    let blogs = document.getElementsByClassName("blog-post");
+        const trimFifty = function () {
+            let blogs = document.querySelectorAll(".blog-post");
+            //console.log(blogs[0].innerText);
 
-                    for (let i = 0; i < blogs.length; i++) {
-                       blogs[i].innerText.
-                } */
+
+            for (let i = 0; i < blogs.length; i++) {
+                //console.log(blogs[i].innerHTML.innerText);
+                let temp = blogs[i].innerText;
+                console.log(typeof (temp));
+                console.log(temp);
+            }
+        }
     </script>
 </body>
 
