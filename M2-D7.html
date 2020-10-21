@@ -464,7 +464,7 @@
     */
 
         const addNewLink = function () {
-            let navbar = document.getElementsByName("nav");
+            let navbar = document.querySelector(".nav");
             console.log(navbar);
             let new_link = document.createElement("a");
             new_link.setAttribute("class", "href");
@@ -474,16 +474,23 @@
             navbar.appendChild(new_link);
         }
 
+        //TODO fix
         const removeSearch = function () {
+            let parent = document.querySelector("svg");
+            while (parent) {
+                parent.removeChild(parent.lastChild);
+            }
 
+            console.log(parent);
         }
 
-        /*         const changeJumboTronBackground = function () {
+        const changeJumboTronBackground = function () {
 
-                    let jumb = document.getElementsByClassName("jumbotron");
-                    jumb.style.background - color = "black";
-                    console.log(jumb);
-                } */
+            let jumb = document.querySelector(".jumbotron");
+            jumb.
+
+            console.log(jumb);
+        }
 
 
         const changeMainTitle = function () {
