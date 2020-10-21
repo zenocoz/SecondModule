@@ -4,7 +4,7 @@ h2 {
 }
 p {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 .h5 {
   font-size: 1.25rem;
@@ -109,10 +109,10 @@ section {
   font-size: 0.8rem;
 }
 .thumb-left {
-  justify-content: flex-start;
+  justify-content: left;
 }
 .thumb-right {
-  justify-content: flex-end;
+  justify-content: right;
 }
 
 .blog-sidebar .card-header {
