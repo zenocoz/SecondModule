@@ -86,6 +86,17 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
 
         }
 
+        tr td:first-of-type {
+            text-align: left;
+        }
+
+        td>button {
+            max-width: 50px;
+            overflow: hidden;
+        }
+
+        .badge-pill {}
+
         .artist {}
 
         .genre {}
@@ -102,11 +113,11 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                     This navigation bar must be linked to every section in your page
                 -->
     <nav class=" navbar navbar-expand-lg navbar-dark bg-dark mx-auto">
-        <a class="navbar-brand" href="#">NAVBAR</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -125,17 +136,27 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                 <li class="nav-item">
                     <a class="nav-link" href="#covers">Only Covers</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
             </ul>
         </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb position-relative">
+                <li class="breadcrumb-item"><a href="#album">Home</a></li>
+                <li class="breadcrumb-item"><a href="#review">Review</a></li>
+                <li class="breadcrumb-item"><a href="#worst">Home</a></li>
+                <li class="breadcrumb-item"><a href="#covers">Covers</a></li>
+            </ol>
+        </nav>
     </nav>
 
     <div class="container-fluid">
         <div class="row text-center">
-            <div class="col-12">
+
+        </div>
+        <div class="jumbotron jumbotron-fluid" style="background-color: black;">
+            <div class="container">
                 <h1 class="title text-center">Federico's Favorite List</h1>
+                <p class="lead">
+                </p>
             </div>
         </div>
 
@@ -153,23 +174,27 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                 <h2>Ziggy Stardust</h2>
                 <img src="https://www.vinylgourmet.com/2097-thickbox_default/david-bowie-the-rise-and-fall-of-ziggy-stardust-and-the-spiders-from-mars-lp-180-gram-vinyl-2016-eu.jpg"
                     class="img-fluid" alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
                 <h2>Bitches Brew</h2>
                 <img src="
                     https://img.discogs.com/nAW4kfoQQhILI3TJljuH15D2NeE=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7609610-1445697865-7698.jpeg.jpg"
                     class="img-fluid" alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
                 <h2>Haunted Graffiti</h2>
                 <img src=" https://media.pitchfork.com/photos/5929aa1aea9e61561daa5b40/1:1/w_600/8df288c5.jpg"
                     class="img-fluid" alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
                 <h2>Loaded</h2>
                 <img src="
                     https://img.discogs.com/A9HsALyJDKBxhdCY-WNfkhoWOn8=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-12140263-1530125129-2762.jpeg.jpg"
                     class="img-fluid" alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
         </div>
         <div class="row text-center mt-3 album">
@@ -177,21 +202,25 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                 <h2>blond</h2>
                 <img src="https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/1:1/w_600/5f06f7f6.jpg"
                     class="img-fluid" alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
                 <h2>Appetite For Destruction</h2>
                 <img src=" https://media1.jpc.de/image/w600/front/0/0602567565673.jpg" class="img-fluid"
                     alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
                 <h2>Disintegration</h2>
                 <img src=" https://media1.jpc.de/image/w600/front/0/0600753245637.jpg" class="img-fluid"
                     alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
                 <h2>Life Of Pablo</h2>
                 <img src="https://external-preview.redd.it/8hnvfs55eT1I-nBI_f_ZqYQSg7HAXY2NLa0g5C5Ue-0.jpg?auto=webp&s=31c0a6d8cd1e7e53f2a70900e3cee8f065cd2810"
                     class="img-fluid" alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
         </div>
         <div class="row text-center mt-3 album">
@@ -199,21 +228,25 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                 <h2>Norman Fucking Rockwell</h2>
                 <img src="https://mytoys.scene7.com/is/image/myToys/ext/12646551-01.jpg?$rtf_mt_prod-main_xl$""
                         class=" img-fluid" alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
                 <h2>Where You Been</h2>
                 <img src="https://img.discogs.com/zsGhygn_2EjiQyfLGDNuwkn6vzI=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4214171-1360472160-8134.jpeg.jpg"
                     class="img-fluid" alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
                 <h2>Abbey Road</h2>
                 <img src="https://img.discogs.com/OnURySqQ8VzdRxOzztR2RxhD8kA=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2607424-1298729076.jpeg.jpg"
                     class="img-fluid" alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
                 <h2>Rumors</h2>
                 <img src="https://media1.jpc.de/image/w600/front/0/0093624979357.jpg" class="img-fluid"
                     alt="Responsive image">
+                <span class="badge badge-pill badge-primary">Primary</span>
             </div>
         </div>
         <!-- EXERCISE 4
@@ -236,16 +269,85 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             </div>
 
             <div class="col-6 title">
-                <p style="font-size: small;">
-                    Godfather ipsum dolor sit amet. Fredo, you're my older brother, and I love you. But don't ever take
-                    sides with anyone against the Family again. Ever. Don't ever give an order like that again. Not
-                    while I'm alive. I'm your older brother, Mike, and I was stepped over! If anything in this life is
-                    certain, if history has taught us anything, it is that you can kill anyone.
+                <table class="table-dark bg-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">tracks</th>
+                            <th scope="col">title</th>
+                            <th scope="col">length</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Five Years</td>
+                            <td>3:24</td>
+                            <td><button type="button" class="btn btn-danger"></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Soul Love</td>
+                            <td>2:47</td>
+                            <td><button type="button" class="btn btn-danger"></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Moonage Daydream</td>
+                            <td>4:12</td>
+                            <td><button type="button" class="btn btn-danger"></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Starman</td>
+                            <td>3:47</td>
+                            <td><button type="button" class="btn btn-danger"></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>It Ain't Easy</td>
+                            <td>3:58</td>
+                            <td><button type="button" class="btn btn-danger"></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Lady Stardust</td>
+                            <td>4:01</td>
+                            <td><button type="button" class="btn btn-danger"></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Star</td>
+                            <td>5:02</td>
+                            <td><button type="button" class="btn btn-danger"></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Hang On To Yourself</td>
+                            <td>3:31</td>
+                            <td><button type="button" class="btn btn-danger"></button></td>
 
-                    Why did you go to the police? Why didn't you come to me first? We're both part of the same
-                    hypocrisy, senator, but never think it applies to my family. My father's name was Antonio
-                    Andolini... and this is for you. This one time, this one time I'll let you ask me about my affairs.
-                </p>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Ziggy Stardust</td>
+                            <td>2:56</td>
+                            <td><button type="button" class="btn btn-danger"></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>Suffragette City</td>
+                            <td>4:10</td>
+                            <td><button type="button" class="btn btn-danger"></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">11</th>
+                            <td>Rock 'n Roll Suicide</td>
+                            <td>5:12</td>
+                            <td><button type="button" class="btn btn-danger"></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
 
 
@@ -364,6 +466,11 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
     </div>
 
     <!-- Optional JavaScript -->
+    <script>
+        const deleteTrack = function () {
+
+        }
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
