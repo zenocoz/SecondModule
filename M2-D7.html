@@ -43,34 +43,36 @@
         }
 
         /*4*/
-        .pb-4+div>h2:first-child {
+        /* .pb-4+div>h2:first-child {
             color: red;
-        }
+        } */
 
         /*4 alternative*/
-        /*   .blog-post h2:first-child {
+        .blog-post:first-of-type {
             color: green;
+            background-color: red;
+        }
 
         /*5*/
         .nav>a:nth-child(even) {
             background-color: greenyellow;
         }
 
-        /*6 NOT WORKING*/
-        .blog-post:last-child>h2 {
+        /*6 */
+        .blog-post:last-of-type {
             color: green;
         }
 
         /*7*/
-        ol:first-of-type>li:nth-of-type(-n+10) {
+        div.p-4>ol>li {
             font-size: large;
             background-color: teal;
         }
 
         /*8*/
-        .blog-post:nth-child(2) a:first-of-type {
+        /* .blog-post:nth-child(2):a:first-of-type {
             color: yellow;
-        }
+        } */
 
         /*9*/
         footer p:last-child>a {
@@ -476,10 +478,8 @@
 
         //TODO fix
         const removeSearch = function () {
-            let parent = document.querySelector("svg");
-            while (parent) {
-                parent.removeChild(parent.lastChild);
-            }
+            let parent = document.querySelector(".blog-header svg");
+            parent.remove();
 
             console.log(parent);
         }
@@ -487,9 +487,8 @@
         const changeJumboTronBackground = function () {
 
             let jumb = document.querySelector(".jumbotron");
-            jumb.
+            jumb.style.cssText = "background-color: green !important";
 
-            console.log(jumb);
         }
 
 
@@ -500,26 +499,26 @@
         }
 
         const changeColumnSize = function () {
-            let headings = document.querySelector("col-md-8");
-            console.log(headings);
+            let headings = document.querySelectorAll(".blog-post h2");
+            for (let i = 0; i < headings.length; i++) {
+                headings[i].classList.add("col-2");
+            }
 
         }
 
-        // const removeAllLinks = function () {
-        //         let links = document.querySelector(");
+        const removeAllLinks = function () {
+            let links = document.querySelector();
 
-        //         }
+        }
 
         const trimFifty = function () {
-            let blogs = document.querySelectorAll(".blog-post");
+            let blogs = document.querySelectorAll(".blog-post p:nth-of-type(2)");
             //console.log(blogs[0].innerText);
 
 
             for (let i = 0; i < blogs.length; i++) {
                 //console.log(blogs[i].innerHTML.innerText);
-                let temp = blogs[i].innerText;
-                console.log(typeof (temp));
-                console.log(temp);
+                blogs[i].innerText = blogs[i].innerText.slice(0, 50);
             }
         }
     </script>
