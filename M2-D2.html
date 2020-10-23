@@ -99,8 +99,29 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             overflow: hidden;
         }
 
+        .button~td {
+            color: chartreuse;
+        }
+
         .card {
             background-color: black;
+        }
+
+        .card-text {
+            display: block;
+            /* or inline-block */
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            overflow: visible;
+            max-height: 3.6em;
+            line-height: 1.8em;
+            text-align: center;
+        }
+
+        .breadcrumb {
+            position: absolute;
+            margin-left: 500px;
+
         }
 
         .badge-pill {}
@@ -146,14 +167,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                 </li>
             </ul>
         </div>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb position-relative">
-                <li class="breadcrumb-item"><a href="#album">Home</a></li>
-                <li class="breadcrumb-item"><a href="#review">Review</a></li>
-                <li class="breadcrumb-item"><a href="#worst">Home</a></li>
-                <li class="breadcrumb-item"><a href="#covers">Covers</a></li>
-            </ol>
-        </nav>
+
     </nav>
 
     <div class="container-fluid">
@@ -166,6 +180,14 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                 <p class="lead">
                 </p>
             </div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb sticky-top ">
+                    <li class="breadcrumb-item"><a href="#album">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#review">Review</a></li>
+                    <li class="breadcrumb-item"><a href="#worst">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#covers">Covers</a></li>
+                </ol>
+            </nav>
         </div>
 
 
@@ -200,36 +222,52 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                         <span class="badge badge-pill badge-primary">Primary</span>
                     </div>
                 </div>
-
-
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://media.pitchfork.com/photos/5929aa1aea9e61561daa5b40/1:1/w_600/8df288c5.jpg""
+                        alt=" Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Haunted Graffiti</p>
+                        <span class="badge badge-pill badge-primary">Primary</span>
+                    </div>
+                </div>
 
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
-                <h2>Haunted Graffiti</h2>
-                <img src=" https://media.pitchfork.com/photos/5929aa1aea9e61561daa5b40/1:1/w_600/8df288c5.jpg"
-                    class="img-fluid" alt="Responsive image">
-                <span class="badge badge-pill badge-primary">Primary</span>
-            </div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
-                <h2>Loaded</h2>
-                <img src="
-                    https://img.discogs.com/A9HsALyJDKBxhdCY-WNfkhoWOn8=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-12140263-1530125129-2762.jpeg.jpg"
-                    class="img-fluid" alt="Responsive image">
-                <span class="badge badge-pill badge-primary">Primary</span>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://img.discogs.com/A9HsALyJDKBxhdCY-WNfkhoWOn8=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-12140263-1530125129-2762.jpeg.jpg""
+                        alt=" Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Loaded</p>
+                        <span class="badge badge-pill badge-primary">Primary</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row text-center mt-3 album">
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
-                <h2>blond</h2>
-                <img src="https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/1:1/w_600/5f06f7f6.jpg"
-                    class="img-fluid" alt="Responsive image">
-                <span class="badge badge-pill badge-primary">Primary</span>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://media.pitchfork.com/photos/5929bcb55e6ef95969322eda/1:1/w_600/5f06f7f6.jpg""
+                        alt=" Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Blond</p>
+                        <span class="badge badge-pill badge-primary">Primary</span>
+                    </div>
+                </div>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
-                <h2>Appetite For Destruction</h2>
-                <img src=" https://media1.jpc.de/image/w600/front/0/0602567565673.jpg" class="img-fluid"
-                    alt="Responsive image">
-                <span class="badge badge-pill badge-primary">Primary</span>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://media1.jpc.de/image/w600/front/0/0602567565673.jpg"
+                        alt=" Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Appetite For Destruction</p>
+                        <span class="badge badge-pill badge-primary">Primary</span>
+                    </div>
+                </div>
             </div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-3 title">
                 <h2>Disintegration</h2>
@@ -290,7 +328,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
             </div>
 
             <div class="col-6 title">
-                <table class="table-dark bg-dark mt-4">
+                <table class="table table-striped table-dark bg-dark mt-4">
                     <thead>
                         <tr>
                             <th scope="col">tracks</th>
@@ -303,7 +341,8 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
                             <th scope="row">1</th>
                             <td>Five Years</td>
                             <td>3:24</td>
-                            <td><button type="button" class="btn btn-danger"></button></td>
+                            <td><button type="button" class="btn btn-danger" onclick="deleteTrack(event)"></button>
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
@@ -489,6 +528,7 @@ Could be the Amazon way, the Spotify or Apple music way or some other blog out t
     <!-- Optional JavaScript -->
     <script>
         const deleteTrack = function () {
+            console.log(this);
 
         }
     </script>
